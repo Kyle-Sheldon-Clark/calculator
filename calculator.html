@@ -17,7 +17,11 @@
         <div onclick="changeDisplay(3)">
             <p>3</p>
         </div>
+        <div onclick="operator()">
+            <p>X</p>
+        </div>
         <br>
+
         <div onclick="changeDisplay(4)">
             <p>4</p>
         </div>
@@ -37,18 +41,42 @@
         <div onclick="changeDisplay(9)">
             <p>9</p>
         </div>
+        <div onclick="evaluateOperation()">
+            <p>=</p>
+        </div>
     
         <script>
 
             let contentToDisplay = '';
+            let firstNum = '';
+            let secondNum = '';
+            let operatorSelected = false;
 
             function changeDisplay(number) {
-                contentToDisplay += number;
-                renderDisplay();
+                if (operatorSelected) {
+                    secondNum += number;
+                    renderDisplay(secondNum);
+                }else {
+                    firstNum += number;
+                    renderDisplay(firstNum);
+                }
             }
 
-            function renderDisplay() {
-                document.getElementById('displayText').innerHTML = contentToDisplay;
+            function renderDisplay(newContent) {
+                document.getElementById('displayText').innerHTML = newContent;
+            }
+
+            function operator() {
+                operatorSelected = true;
+            }
+
+            function multiply(number1, number2) {
+                return number1 * number2;
+            }
+
+            function evaluateOperation() {
+                let solution = multiply(parseInt(firstNum), parseInt(secondNum));
+                renderDisplay(''+solution);
             }
         </script>
     </body>
