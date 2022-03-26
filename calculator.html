@@ -17,7 +17,7 @@
         <div onclick="changeDisplay(3)">
             <p>3</p>
         </div>
-        <div onclick="operator()">
+        <div onclick="operator('multiply')">
             <p>X</p>
         </div>
         <br>
@@ -30,6 +30,9 @@
         </div>
         <div onclick="changeDisplay(6)">
             <p>6</p>
+        </div>
+        <div onclick="operator('divide')">
+            <p>/</p>
         </div>
         <br>
         <div onclick="changeDisplay(7)">
@@ -44,16 +47,20 @@
         <div onclick="evaluateOperation()">
             <p>=</p>
         </div>
+        <br>
+        <div onclick="changeDisplay(0)">
+            <p>0</p>
+        </div>
     
         <script>
 
             let contentToDisplay = '';
             let firstNum = '';
             let secondNum = '';
-            let operatorSelected = false;
+            let operatorSelected = '';
 
             function changeDisplay(number) {
-                if (operatorSelected) {
+                if (operatorSelected !== '') {
                     secondNum += number;
                     renderDisplay(secondNum);
                 }else {
@@ -66,16 +73,25 @@
                 document.getElementById('displayText').innerHTML = newContent;
             }
 
-            function operator() {
-                operatorSelected = true;
+            function operator(operatorType) {
+                operatorSelected = operatorType;
             }
 
-            function multiply(number1, number2) {
-                return number1 * number2;
+            function multiply() {
+                return parseInt(firstNum) * parseInt(secondNum);
+            }
+
+            function divide() {
+                return parseInt(firstNum) / parseInt(secondNum);
             }
 
             function evaluateOperation() {
-                let solution = multiply(parseInt(firstNum), parseInt(secondNum));
+                let solution = 0;
+                if (operatorSelected === 'multiply') {
+                    solution = multiply();
+                }else if (operatorSelected === 'divide') {
+                    solution = divide();
+                }
                 renderDisplay(''+solution);
             }
         </script>
