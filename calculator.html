@@ -4,10 +4,10 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div id="parent">
         <div id="display">
             <p id="displayText"></p>
         </div>
-        <br>
         <div onclick="changeDisplay(1)">
             <p>1</p>
         </div>
@@ -49,8 +49,9 @@
         </div>
         <br>
         <div onclick="changeDisplay(0)">
-            <p>0</p>
+            <p id="zero">0</p>
         </div>
+    </div>
     
         <script>
 
