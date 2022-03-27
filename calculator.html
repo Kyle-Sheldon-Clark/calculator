@@ -58,7 +58,6 @@
     
         <script>
 
-            let contentToDisplay = '';
             let firstNum = '';
             let secondNum = '';
             let operatorSelected = '';
@@ -102,6 +101,9 @@
                 }else if (operatorSelected === 'add') {
                     solution = add();
                 }
+                firstNum = ''+solution;
+                secondNum = '';
+                operatorSelected = '';
                 renderDisplay(''+solution);
             }
         </script>
