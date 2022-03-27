@@ -20,6 +20,9 @@
         <div onclick="operator('multiply')">
             <p>X</p>
         </div>
+        <div onclick="operator('add')">
+            <p>+</p>
+        </div>
         <br>
 
         <div onclick="changeDisplay(4)">
@@ -86,12 +89,18 @@
                 return parseInt(firstNum) / parseInt(secondNum);
             }
 
+            function add() {
+                return parseInt(firstNum) + parseInt(secondNum);
+            }
+
             function evaluateOperation() {
                 let solution = 0;
                 if (operatorSelected === 'multiply') {
                     solution = multiply();
                 }else if (operatorSelected === 'divide') {
                     solution = divide();
+                }else if (operatorSelected === 'add') {
+                    solution = add();
                 }
                 renderDisplay(''+solution);
             }
