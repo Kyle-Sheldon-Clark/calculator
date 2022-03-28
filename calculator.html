@@ -37,6 +37,9 @@
         <div onclick="operator('divide')">
             <p>/</p>
         </div>
+        <div onclick="operator('subtract')">
+            <p>-</p>
+        </div>
         <br>
         <div onclick="changeDisplay(7)">
             <p>7</p>
@@ -92,6 +95,10 @@
                 return parseInt(firstNum) + parseInt(secondNum);
             }
 
+            function subtract() {
+                return parseInt(firstNum) - parseInt(secondNum);
+            }
+
             function evaluateOperation() {
                 let solution = 0;
                 if (operatorSelected === 'multiply') {
@@ -100,6 +107,8 @@
                     solution = divide();
                 }else if (operatorSelected === 'add') {
                     solution = add();
+                }else if (operatorSelected === 'subtract') {
+                    solution = subtract();
                 }
                 firstNum = ''+solution;
                 secondNum = '';
