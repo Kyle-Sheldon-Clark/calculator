@@ -111,6 +111,10 @@
 
             function evaluateOperation() {
                 let solution = 0;
+                if (firstNum.length < 1) {
+                    clear();
+                    return;
+                }
                 if (operatorSelected === 'multiply') {
                     solution = multiply();
                 }else if (operatorSelected === 'divide') {
