@@ -65,7 +65,9 @@
                 <div id="zero" onclick="changeDisplay(0)">
                     <p>0</p>
                 </div>
-                <div></div>
+                <div onclick="changeDisplay('.')">
+                    <p>.</p>
+                </div>
                 <div></div>
             </div>
     </div>
@@ -95,19 +97,19 @@
             }
 
             function multiply() {
-                return parseInt(firstNum) * parseInt(secondNum);
+                return parseFloat(firstNum) * parseFloat(secondNum);
             }
 
             function divide() {
-                return parseInt(firstNum) / parseInt(secondNum);
+                return parseFloat(firstNum) / parseFloat(secondNum);
             }
 
             function add() {
-                return parseInt(firstNum) + parseInt(secondNum);
+                return parseFloat(firstNum) + parseFloat(secondNum);
             }
 
             function subtract() {
-                return parseInt(firstNum) - parseInt(secondNum);
+                return parseFloat(firstNum) - parseFloat(secondNum);
             }
 
             function clearDisplay() {
