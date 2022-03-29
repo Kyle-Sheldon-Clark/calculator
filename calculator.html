@@ -5,61 +5,69 @@
     </head>
     <body>
         <div id="parent">
-        <div id="display">
-            <p id="displayText"></p>
+        <di class="row">
+            <div id="display">
+                <p id="displayText"></p>
+            </div>
         </div>
-        <div onclick="changeDisplay(7)">
-            <p>7</p>
+        <div class="row">
+            <div onclick="changeDisplay(7)">
+                <p>7</p>
+            </div>
+            <div onclick="changeDisplay(8)">
+                <p>8</p>
+            </div>
+            <div onclick="changeDisplay(9)">
+                <p>9</p>
+            </div>
+            <div onclick="operator('multiply')">
+                <p>X</p>
+            </div>
+            <div onclick="operator('add')">
+                <p>+</p>
+            </div>
         </div>
-        <div onclick="changeDisplay(8)">
-            <p>8</p>
+        <div class="row">
+            <div onclick="changeDisplay(4)">
+                <p>4</p>
+            </div>
+            <div onclick="changeDisplay(5)">
+                <p>5</p>
+            </div>
+            <div onclick="changeDisplay(6)">
+                <p>6</p>
+            </div>
+            <div onclick="operator('divide')">
+                <p>/</p>
+            </div>
+            <div onclick="operator('subtract')">
+                <p>-</p>
+            </div>
         </div>
-        <div onclick="changeDisplay(9)">
-            <p>9</p>
+        <div class="row">
+            <div onclick="changeDisplay(1)">
+                <p>1</p>
+            </div>
+            <div onclick="changeDisplay(2)">
+                <p>2</p>
+            </div>
+            <div onclick="changeDisplay(3)">
+                <p>3</p>
+            </div>
+            <div onclick="evaluateOperation()">
+                <p>=</p>
+            </div>
+            <div onclick="clearDisplay()">
+                <p>C</p>
+            </div>
         </div>
-        <div onclick="operator('multiply')">
-            <p>X</p>
-        </div>
-        <div onclick="operator('add')">
-            <p>+</p>
-        </div>
-        <br>
-
-        <div onclick="changeDisplay(4)">
-            <p>4</p>
-        </div>
-        <div onclick="changeDisplay(5)">
-            <p>5</p>
-        </div>
-        <div onclick="changeDisplay(6)">
-            <p>6</p>
-        </div>
-        <div onclick="operator('divide')">
-            <p>/</p>
-        </div>
-        <div onclick="operator('subtract')">
-            <p>-</p>
-        </div>
-        <br>
-        <div onclick="changeDisplay(1)">
-            <p>1</p>
-        </div>
-        <div onclick="changeDisplay(2)">
-            <p>2</p>
-        </div>
-        <div onclick="changeDisplay(3)">
-            <p>3</p>
-        </div>
-        <div onclick="evaluateOperation()">
-            <p>=</p>
-        </div>
-        <div onclick="clearDisplay()">
-            <p>C</p>
-        </div>
-        <br>
-        <div onclick="changeDisplay(0)">
-            <p id="zero">0</p>
-        </div>
+            <div class="row">
+                <div id="zero" onclick="changeDisplay(0)">
+                    <p>0</p>
+                </div>
+                <div></div>
+                <div></div>
+            </div>
     </div>
     
         <script>
