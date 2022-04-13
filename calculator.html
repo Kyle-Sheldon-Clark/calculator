@@ -91,7 +91,7 @@
             }
 
             function renderDisplay(newContent) {
-                document.getElementById('displayText').innerHTML = newContent;
+                document.getElementById('displayText').innerText = newContent;
             }
 
             function operator(operatorType) {
@@ -142,7 +142,41 @@
                 renderDisplay(''+solution);
             }
             document.addEventListener('keydown', function(event) {
-                console.log(event.key);
+                if (event.key === '0') {
+                    changeDisplay(event.key);
+                } else if (event.key === '1') {
+                    changeDisplay(event.key);
+                } else if (event.key === '2') {
+                    changeDisplay(event.key);
+                } else if (event.key === '3') {
+                    changeDisplay(event.key);
+                } else if (event.key === '4') {
+                    changeDisplay(event.key);
+                } else if (event.key === '5') {
+                    changeDisplay(event.key);
+                } else if (event.key === '6') {
+                    changeDisplay(event.key);
+                } else if (event.key === '7') {
+                    changeDisplay(event.key);
+                } else if (event.key === '8') {
+                    changeDisplay(event.key);
+                } else if (event.key === '9') {
+                    changeDisplay(event.key);
+                } else if (event.key === '*') {
+                    operator('multiply');
+                } else if (event.key === '/') {
+                    operator('divide');
+                } else if (event.key === '+') {
+                    operator('add');
+                } else if (event.key === '-') {
+                    operator('subtract');
+                } else if (event.key === '=' || event.key === 'Enter') {
+                    evaluateOperation();
+                } else if (event.key === 'Backspace' || event.key === 'Delete') {
+                    changeDisplay('back');
+                } else if (event.key === '.') {
+                    changeDisplay('.');
+                }
             });
         </script>
     </body>
