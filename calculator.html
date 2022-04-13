@@ -68,7 +68,9 @@
                 <div onclick="changeDisplay('.')">
                     <p>.</p>
                 </div>
-                <div></div>
+                <div onclick="changeDisplay('back')">
+                    <p>Del</p>
+                </div>
             </div>
     </div>
     
@@ -139,6 +141,9 @@
                 operatorSelected = '';
                 renderDisplay(''+solution);
             }
+            document.addEventListener('keydown', function(event) {
+                console.log(event.key);
+            });
         </script>
     </body>
 </html>
