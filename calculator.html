@@ -68,7 +68,7 @@
                 <div onclick="changeDisplay('.')">
                     <p>.</p>
                 </div>
-                <div onclick="changeDisplay('back')">
+                <div onclick="back()">
                     <p>Del</p>
                 </div>
             </div>
@@ -119,6 +119,12 @@
 
             function subtract() {
                 return parseFloat(firstNum) - parseFloat(secondNum);
+            }
+
+            function back() {
+                let newNum = firstNum.slice(0,-1);
+                firstNum = newNum;
+                renderDisplay(firstNum);
             }
 
             function clearDisplay() {
@@ -184,7 +190,7 @@
                 } else if (event.key === '=' || event.key === 'Enter') {
                     evaluateOperation();
                 } else if (event.key === 'Backspace' || event.key === 'Delete') {
-                    changeDisplay('back');
+                    back();
                 } else if (event.key === '.') {
                     changeDisplay('.');
                 }
