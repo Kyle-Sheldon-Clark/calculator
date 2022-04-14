@@ -122,6 +122,9 @@
             }
 
             function back() {
+                if (firstNum.charAt(firstNum.length-1) === '.') {
+                    isDecimal = false;
+                }
                 let newNum = firstNum.slice(0,-1);
                 firstNum = newNum;
                 renderDisplay(firstNum);
