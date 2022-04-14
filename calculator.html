@@ -79,12 +79,18 @@
             let firstNum = '';
             let secondNum = '';
             let operatorSelected = '';
+            let isDecimal = false;
 
             function changeDisplay(number) {
+                if (number === '.' && !isDecimal) {
+                    isDecimal = true;
+                } else if (number === '.' && isDecimal) {
+                    return;
+                }
                 if (operatorSelected !== '') {
                     secondNum += number;
                     renderDisplay(secondNum);
-                }else {
+                } else {
                     firstNum += number;
                     renderDisplay(firstNum);
                 }
@@ -95,6 +101,7 @@
             }
 
             function operator(operatorType) {
+                isDecimal = false;
                 operatorSelected = operatorType;
             }
 
@@ -118,6 +125,7 @@
                 firstNum = '';
                 secondNum = '';
                 operatorSelected = '';
+                isDecimal = false;
                 renderDisplay('');
             }
 
@@ -135,6 +143,9 @@
                     solution = add();
                 }else if (operatorSelected === 'subtract') {
                     solution = subtract();
+                }
+                if (solution % 1 !== 0) {
+                    isDecimal = true;
                 }
                 firstNum = ''+solution;
                 secondNum = '';
